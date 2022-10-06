@@ -1,4 +1,6 @@
-﻿namespace DeWPF
+﻿using System.Diagnostics;
+
+namespace DeWPF
 {
     // Un lancer d'un objet de hasard
     public class Lancer

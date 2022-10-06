@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Diagnostics;
+
 
 namespace DeWPF
 {
     // Un objet de hasard
     public abstract class ObjetHasard : IObjetHasard
     {
-        protected static readonly Random rnd = new Random();
+        public static readonly Random rnd = new Random();
 
         public string Nom { get; }
 
@@ -26,6 +28,9 @@ namespace DeWPF
             {
                 Faces[valeur-1] = new Face(valeur, valeur.ToString());
             }
+
+            // Assertion de débogage
+            Debug.Assert(Faces.Length > 0, "Valide qu'il y a bien plusieurs faces a l'object.");
         }
 
         public Face Lancer()
